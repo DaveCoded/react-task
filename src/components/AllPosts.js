@@ -1,22 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import axios from 'axios';
 import Accordion from './Accordion';
 
-const AllPosts = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios('https://jsonplaceholder.typicode.com/posts');
-      console.log(result);
-      setPosts(result.data);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
-
+const AllPosts = ({ posts, loading }) => {
   let jsx = loading ? (
     <p style={{ textAlign: 'center' }}>Loading...</p>
   ) : (
