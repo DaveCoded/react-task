@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Header from './components/Header';
+import Accordion from './components/Accordion';
+import AllPosts from './components/AllPosts';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main>
+        <div className='column'>
+          <h2>All posts</h2>
+          <AllPosts />
+        </div>
+        <div className='column'>
+          <h2>My posts</h2>
+          <Accordion
+            title='ea molestias quasi exercitationem repellat qui ipsa sit aut'
+            content='et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut'
+          />
+        </div>
+      </main>
+    </>
   );
 }
 
