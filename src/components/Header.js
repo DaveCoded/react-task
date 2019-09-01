@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ changeFunc, inputVal }) => {
   return (
     <header>
       <div style={{ position: 'relative' }}>
@@ -17,6 +17,8 @@ const Header = () => {
           min='1'
           max='10'
           placeholder='Please select between 1 and 10'
+          value={inputVal}
+          onChange={changeFunc}
         />
       </div>
     </header>

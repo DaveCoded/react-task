@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Column from './components/Column';
 import Header from './components/Header';
-import Accordion from './components/Accordion';
 import AllPosts from './components/AllPosts';
+import MyPosts from './components/MyPosts';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [myId, setMyId] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,21 +20,20 @@ const App = () => {
     fetchData();
   }, []);
 
+  const handleChange = e => {
+    setMyId(e.target.value);
+  };
+
   return (
     <>
-      <Header />
+      <Header changeFunc={handleChange} inputVal={myId} />
       <main>
-        <div className='column'>
-          <h2>All posts</h2>
+        <Column heading='All posts'>
           <AllPosts posts={posts} loading={loading} />
-        </div>
-        <div className='column'>
-          <h2>My posts</h2>
-          <Accordion
-            title='ea molestias quasi exercitationem repellat qui ipsa sit aut'
-            content='et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut'
-          />
-        </div>
+        </Column>
+        <Column heading='My posts'>
+          <MyPosts posts={posts} changeFunc={handleChange} myId={myId} />
+        </Column>
       </main>
     </>
   );
