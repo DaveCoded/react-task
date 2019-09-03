@@ -24,6 +24,14 @@ const App = () => {
     setMyId(e.target.value);
   };
 
+  const handleMyPosts = myId => {
+    if (!myId || myId < 1 || myId > 10) {
+      return <p className='enter-id'>Enter your ID to see your posts</p>;
+    } else {
+      return <MyPosts posts={posts} myId={myId} />;
+    }
+  };
+
   return (
     <>
       <Header changeFunc={handleChange} inputVal={myId} />
@@ -31,9 +39,7 @@ const App = () => {
         <Column heading='All posts'>
           <AllPosts posts={posts} loading={loading} />
         </Column>
-        <Column heading='My posts'>
-          <MyPosts posts={posts} changeFunc={handleChange} myId={myId} />
-        </Column>
+        <Column heading='My posts'>{handleMyPosts(myId)}</Column>
       </main>
     </>
   );

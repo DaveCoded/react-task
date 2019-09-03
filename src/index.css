@@ -64,14 +64,31 @@ li {
 
 main {
   width: 100%;
-  min-height: 800px;
   display: flex;
   justify-content: space-evenly;
 }
 
+@media (max-width: 900px) {
+  main {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
 .column {
   width: 44%;
-  height: 700px;
+}
+
+@media (max-width: 900px) {
+  .column {
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .column {
+    width: 83%;
+  }
 }
 
 h2 {
@@ -90,4 +107,13 @@ h2 {
   height: 250px;
   text-align: center;
   margin: 0 auto;
+}
+
+.enter-id {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  color: inherit;
+  font-size: 18px;
+  margin-bottom: var(--m-lg);
+  text-align: center;
 }

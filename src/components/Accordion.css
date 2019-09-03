@@ -5,7 +5,7 @@
 }
 
 .accordion {
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
   color: inherit;
   padding: var(--p-accordion);
@@ -25,6 +25,7 @@
 }
 
 .accordion__icon {
+  min-width: 15px;
   margin-left: auto;
   transform: rotate(-180deg);
   transition: transform 0.3s ease-out;
