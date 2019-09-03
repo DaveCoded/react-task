@@ -117,3 +117,15 @@ h2 {
   margin-bottom: var(--m-lg);
   text-align: center;
 }
+
+fieldset {
+  border: none;
+  position: relative;
+}
+
+legend {
+  font-family: inherit;
+  font-size: 12px;
+  color: red;
+  position: absolute;
+}
