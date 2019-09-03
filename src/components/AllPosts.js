@@ -7,9 +7,9 @@ const AllPosts = ({ posts, loading }) => {
     <p style={{ textAlign: 'center' }}>Loading...</p>
   ) : (
     <ul>
-      {posts.map(({ id, title, body, userId }) => (
+      {posts.map(({ id, title, body }) => (
         <li key={id}>
-          <Accordion title={title} content={body} postId={id} userId={userId} />
+          <Accordion title={title} content={body} postId={id} />
         </li>
       ))}
     </ul>

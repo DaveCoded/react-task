@@ -6,9 +6,9 @@ const MyPosts = ({ posts, myId }) => {
   let filteredPosts = posts.filter(post => post.userId === Number(myId));
   return (
     <ul>
-      {filteredPosts.map(({ id, title, body, userId }) => (
+      {filteredPosts.map(({ id, title, body }) => (
         <li key={id}>
-          <Accordion title={title} content={body} postId={id} userId={userId} />
+          <Accordion title={title} content={body} postId={id} />
         </li>
       ))}
     </ul>

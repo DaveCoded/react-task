@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import './Accordion.css';
 import Arrow from './Arrow';
 
-const Accordion = ({ title, content, postId, userId }) => {
+const Accordion = ({ title, content, postId }) => {
   const [activeState, setActiveState] = useState('');
   const [heightState, setHeightState] = useState('0px');
   const [rotateState, setRotateState] = useState('accordion__icon');
