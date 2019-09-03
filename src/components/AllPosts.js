@@ -6,6 +6,7 @@ const AllPosts = ({ posts, loading }) => {
   let jsx = loading ? (
     <p style={{ textAlign: 'center' }}>Loading...</p>
   ) : (
+    // once loading === false, output list of all posts
     <ul>
       {posts.map(({ id, title, body }) => (
         <li key={id}>

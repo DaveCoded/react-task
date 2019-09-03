@@ -1,5 +1,6 @@
 import React from 'react';
 
+// set props to make the arrow reusable in different contexts throughout app
 const Arrow = ({ className, height, width, fill }) => {
   return (
     <svg

@@ -10,6 +10,7 @@ const Accordion = ({ title, content, postId }) => {
 
   const contentRef = useRef(null);
 
+  // toggle accordion open/closed using max-height; rotate arrow icon
   const toggleAccordion = () => {
     setActiveState(activeState === '' ? 'active' : '');
     setHeightState(

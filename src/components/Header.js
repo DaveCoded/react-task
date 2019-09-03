@@ -2,6 +2,7 @@ import React from 'react';
 
 const Header = ({ changeFunc, inputVal }) => {
   const legend =
+    // validate input number and conditionally render message
     (inputVal && inputVal < 1) || (inputVal && inputVal > 10) ? (
       <legend>Please select a number between 1 and 10</legend>
     ) : null;

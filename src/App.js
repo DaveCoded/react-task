@@ -11,6 +11,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [myId, setMyId] = useState('');
 
+  // fetch posts and handle loading state
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios('https://jsonplaceholder.typicode.com/posts');
@@ -24,6 +25,7 @@ const App = () => {
     setMyId(e.target.value);
   };
 
+  // conditionally set MyPosts column content
   const handleMyPosts = myId => {
     if (!myId || myId < 1 || myId > 10) {
       return <p className='enter-id'>Enter your ID to see your posts</p>;

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400&display=swap');
 
+/* If supporting older browsers, I would not use CSS custom properties.
+   I usually set up Sass and use its variables instead. */
 :root {
   --color-dark: #707070;
   --color-mid: #e3dede;
@@ -13,6 +15,7 @@
   --p-accordion: 12px 14px 12px 18px;
 }
 
+/* Reset margin and padding to normalize across browsers */
 *,
 *::after,
 *::before {
@@ -22,7 +25,7 @@
 
 body {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif; /* Looks close to the font used in the png; is it? */
   color: var(--color-dark);
 }
 
